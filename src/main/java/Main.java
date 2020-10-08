@@ -1,13 +1,13 @@
 import java.io.*;
 import java.nio.file.Files;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main {
+    static List<Weapon> list = new LinkedList<>();
     public static void main(String[] args) throws IOException {
-        List<Weapon> list = new LinkedList<>();
+
 
         /*try(BufferedReader br = new BufferedReader(new FileReader("weapons.csv"))){
             String line = br.readLine();
@@ -35,15 +35,35 @@ public class Main {
                 ))
                 .collect(Collectors.toList());
 
-        //list.sort((w1, w2) -> Integer.compare(w1.getDamage(), w2.getDamage()));
-        list.sort((w1, w2) -> {
+        //
+
+
+
+        //list.forEach(System.out::println);
+
+        /*list.forEach(w ->
+            System.out.println(w.toString()));*/
+        listSortedByDamage(list);
+       Printable printable = (w -> w.forEach(t -> System.out.println(t.toString2())));
+       printable.print(list);
+
+
+       Streams streams = new Streams();
+
+
+
+    }
+
+    public static List<Weapon> listSortedByDamage(List<Weapon> l){
+        l.sort((w1, w2) -> Integer.compare(w1.getDamage(), w2.getDamage()));
+        return l;
+    }
+
+    public static List<Weapon> listSortedByCombatUsw(List<Weapon> l){
+        l.sort((w1, w2) -> {
             String weapon1 = w1.getCombatType().toString() + w1.getDamageType().toString() + w1.getName();
             String weapon2 = w2.getCombatType().toString() + w2.getDamageType().toString() + w2.getName();
             return weapon1.compareTo(weapon2);});
-
-
-        list.forEach(System.out::println);
-
-
+        return l;
     }
 }

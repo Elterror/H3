@@ -87,6 +87,40 @@ public class Weapon {
     }
 
 
+    public String toString2() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("+");
+        for (int i = 0; i < name.length(); i++) {
+            sb.append("-");
+        }
+        sb.append("+");
+        for (int i = 0; i < combatType.toString().length(); i++) {
+            sb.append("-");
+        }
+        sb.append("+");
+        for (int i = 0; i < damageType.toString().length(); i++) {
+            sb.append("-");
+        }
+        sb.append("+");
+        for (int i = 0; i < String.valueOf(damage).length(); i++) {
+            sb.append("-");
+        }
+        sb.append("+");
+        for (int i = 0; i < String.valueOf(speed).length(); i++) {
+            sb.append("-");
+        }
+        sb.append("+");
+        for (int i = 0; i < String.valueOf(minStrength).length(); i++) {
+            sb.append("-");
+        }
+        sb.append("+");
+        for (int i = 0; i < String.valueOf(value).length(); i++) {
+            sb.append("-");
+        }
+        sb.append("+");
+        return sb + "\n|" + name + "|" + combatType + "|" + damageType + "|" + damage + "|" + speed + "|" + minStrength + "|" + value + "|";
+    }
+
 
 }
 
