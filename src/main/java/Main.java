@@ -47,7 +47,7 @@ public class Main {
             System.out.printf("%-7s %n", " | " + t.getValue());
             System.out.println("+---------------------------------------------------------------------------------+");
         });
-        tablePrint.print(list);
+        tablePrint.print(list); 
     }
 
     public void listSortedByDamage(){
